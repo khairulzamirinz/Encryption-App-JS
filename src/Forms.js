@@ -4,7 +4,7 @@ export default class TextBox extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: '', encryptText: ''
+            data: '', encryptText: '', keyGenerated: ''
         }
     }
     
@@ -32,6 +32,8 @@ export default class TextBox extends React.Component {
             if (vowelArray.includes(originalText.charAt(i).toUpperCase())) {
                 let k = lettersArray.indexOf(originalText.charAt(i).toUpperCase())
                 let shiftIndex = k + vowelShiftNum
+
+                // check if total shiftIndex exceed lettersArray length and minus it
                 if (shiftIndex > lettersArray.length - 1) {
                     shiftIndex = shiftIndex - (lettersArray.length - 1) - 1
                 }
@@ -41,6 +43,7 @@ export default class TextBox extends React.Component {
                     encryptedArray.push(lettersArray[shiftIndex].toLowerCase())
                 }
             } else {
+                // check if original text contains special character
                 if (/^[a-zA-Z]*$/.test(originalText.charAt(i)) == true) {
                     let k = lettersArray.indexOf(originalText.charAt(i).toUpperCase())
                     let shiftIndex = k + consonantShiftNum
@@ -58,8 +61,9 @@ export default class TextBox extends React.Component {
 
             }
         }
-        console.log(encryptedArray.join(''))
+        
         this.setState({ encryptText: encryptedArray.join('') })
+        this.setState({ keyGenerated: keyNum})
 
 
         // console.log(originalText)
@@ -72,13 +76,15 @@ export default class TextBox extends React.Component {
 
     render() {
         return (
-            <div>
-                Enter text to be encrypted: &nbsp;
-                <input onChange={this.onTextChanged} type="text"></input>
-                <br />
-                <br />
-                <input type="button" value="Submit" onClick={this.clicked} />
-                <h1>{this.state.encryptText}</h1>
+            <div className="container">
+                <h1>ENCRYPTION APP</h1><br />
+                <input onChange={this.onTextChanged} type="text" className="myTextBox" size="70" placeholder="Enter plain text"></input>
+                <br /><br />
+                <span className="left">Key generated : {this.state.keyGenerated} </span>
+                <input className="button" type="button" value="Submit" onClick={this.clicked} />
+                <br /><br />
+                <p>Result:</p>
+                <input type="text" className="myTextBox" size="70" value={this.state.encryptText} readOnly></input>
             </div>
         )
 

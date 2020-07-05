@@ -14,3 +14,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.button {
+  background-color: white;
+  border: 2px solid #4CAF50;
+  color: black;
+  padding: 5px 20px;
+  justify-content: center;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  float: right;
+  margin-right: 190pt;
+}
+
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+.container {
+  border: 2px outset black;
+  background-color: rgb(245, 238, 238);    
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.myTextBox {
+  border: 2px solid #cdcdcd;
+  border-color: rgb(109, 106, 106);
+  font-size: large ;
+}
+
+.left{
+  float: left;
+  margin-left: 187pt;
+  padding: 5px 0px;
+  text-align: center;
+  
+  font-size: large;
+}
+
+p{
+  text-align: left;
+  margin-left: 187pt;
+  font-size: large;
+  margin-bottom: 0.5em;
+}
