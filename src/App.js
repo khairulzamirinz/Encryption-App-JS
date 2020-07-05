@@ -3,7 +3,7 @@ import Forms from './Forms';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" >
         <Forms />
     </div>
   );

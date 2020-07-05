@@ -80,7 +80,7 @@ export default class TextBox extends React.Component {
                 <h1>ENCRYPTION APP</h1><br />
                 <input onChange={this.onTextChanged} type="text" className="myTextBox" size="70" placeholder="Enter plain text"></input>
                 <br /><br />
-                <span className="left">Key generated : {this.state.keyGenerated} </span>
+                <p>Key generated : {this.state.keyGenerated}</p>
                 <input className="button" type="button" value="Submit" onClick={this.clicked} />
                 <br /><br />
                 <p>Result:</p>
